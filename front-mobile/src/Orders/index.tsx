@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Header from '../Header'
+import OrderCard from '../OrderCard';
+
 function Orders() {
 
   const handleOnPress = () => {
@@ -10,13 +12,23 @@ function Orders() {
    return (
     <>
     <Header />
-    <View >
-       <Text>Listagem de pedidos</Text>
-    </View>
+    <ScrollView style={styles.container}>
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+      <OrderCard />
+    </ScrollView>
     </>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    paddingRight: '5%',
+    paddingLeft: '5%',
+  }
+});
+  
 
 export default Orders;
